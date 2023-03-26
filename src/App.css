@@ -1,39 +1,27 @@
-.App {
-  text-align: center;
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fefc01;
+    height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chat_logo{
+    object-fit: contain;
+    height: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+.app_body{
+    background: url("https://www.clipartmax.com/png/full/481-4819911_clip-black-and-white-silhouette-mobile-at-getdrawings-cell-phone-icon-transparent.png") no-repeat center;
+    background-size: contain;
+    height: 400px;
+    width: 250px;
+    padding: 74px;
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: rgb(112, 76, 182);
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.app_bodyBackground{
+    background-color: white;
+    height:400px;
+    
 }
