@@ -19,9 +19,11 @@ import { useState } from 'react';
 import { serverTimestamp,collection, addDoc, } from 'firebase/firestore';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
+import { selectUser } from './features/appSlice';
 
 function Preview() {
   const cameraImage = useSelector(selectCameraImage);
+  const user = useSelector(selectUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [imageUrl, setImageUrl] = useState('');
@@ -46,8 +48,9 @@ function Preview() {
       getDownloadURL(snapshot.ref).then((url) => {
         addDoc(collection(db, 'posts'), {
           imageUrl: url,
-          username: 'Amit Dubey',
+          username: user.username,
           read: false,
+          profilePic: user.profilePic,
           timestamp: serverTimestamp(),
         }).then(() => {
           navigate('/chats', { replace: true });
